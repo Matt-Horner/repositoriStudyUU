@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Кнопки та посилання</title>
+    <style>
+        /* стилі для кнопки, створеної вручну */
+        .btn-manual {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        /* стилі для кнопки, створеної з генератора кнопок */
+        .btn-generator {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        /* стилі для кнопки, взятої з бібліотеки готових кнопок */
+        .btn-library {
+            background-color: #f44336;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        /* Кнопка з рамкою та градієнтом */
+        .button-gradient {
+            background: linear-gradient(to bottom, #fbfcdb 0%, #badeff 100%);
+            border: 2px solid #232d4f;
+            border-radius: 30px;
+            color: #232d4f;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 20px;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .button-gradient:hover {
+            background: linear-gradient(to bottom, #badeff 0%, #fbfcdb 100%);
+            border-color: #badeff;
+            color: #fff;
+        }
+
+        /* Кнопка з ефектом 3D */
+        .button-3d {
+            background-color: #ff00ff;
+            border: 4px solid #ff3399;
+            border-radius: 10px;
+            box-shadow: 0px 6px #ff0066;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 20px;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .button-3d:hover {
+            background-color: #ff0066;
+            border-color: #ff00ff;
+            box-shadow: 0px 6px #ff3399;
+        }
+
+        /* Кнопка з ефектом складання */
+        .button-fold {
+            background-color: #232d4f;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            height: 50px;
+            position: relative;
+            transition: all 0.2s ease-in-out;
+            width: 150px;
+        }
+
+        /* Кнопка з обведенням лінією та переходом по наведенню */
+        .btn-bordered-hover {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid #ff4c4c;
+            color: #ff4c4c;
+            text-decoration: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .btn-bordered-hover:hover {
+            border-color: #b30000;
+        }
+
+        /* Кнопка з ефектом пульсації */
+        .btn-pulse {
+            display: inline-block;
+            position: relative;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Кнопка з ефектом градієнту */
+        .btn-gradient {
+            display: inline-block;
+            padding: 10px 20px;
+            border: none;
+            color: #fff;
+            background-image: linear-gradient(to right, #ff4c4c, #ffaf4c);
+            text-decoration: none;
+        }
+
+        .btn-gradient:hover {
+            background-image: linear-gradient(to right, #b30000, #b38600);
+        }
+
+        /* Кнопка з ефектом анімації */
+        .btn-animation {
+            display: inline-block;
+            padding: 10px 20px;
+            border: none;
+            color: #fff;
+            background-color: #4caf50;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-animation::before {
+            content: '';
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.2);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            transition: transform 0.5s ease-out;
+        }
+
+        .papiich-button {
+            background-color: #FA8072;
+            /* рожевий фон */
+            color: white;
+            /* білий колір тексту */
+            font-size: 2rem;
+            /* великий розмір тексту */
+            border: none;
+            /* без обрамлення */
+            padding: 10px 20px;
+            /* відступи внутрішньої частини кнопки */
+            border-radius: 5px;
+            /* закруглені кути */
+            text-shadow: 1px 1px 2px black;
+            /* тінь тексту */
+            box-shadow: 3px 3px 0px 0px black;
+            /* тінь кнопки */
+            cursor: pointer;
+            /* змінює курсор при наведенні */
+        }
+
+        .papiich-button:hover {
+            background-color: #F08080;
+            /* змінює колір фону при наведенні */
+        }
+
+        .dota2-button {
+            display: inline-block;
+            position: relative;
+            border: 2px solid #8B0000;
+            border-radius: 5px;
+            padding: 100px 200px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #FFF;
+            background-color: #8B0000;
+            text-align: center;
+            text-decoration: none;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .dota2-button:hover {
+            background-color: #FFF;
+            color: #8B0000;
+            cursor: pointer;
+        }
+
+        .dota2-button img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .dota2-button:hover img {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- кнопка, створена вручну -->
+    <a href="https://www.google.com" target="_blank" class="btn-manual">Google</a>
+
+    <!-- кнопка, створена за допомогою генератора -->
+    <a href="https://www.yahoo.com" target="_blank" class="btn-generator">Yahoo</a>
+
+    <!-- кнопка, взята з бібліотеки готових кнопок -->
+    <a href="https://www.bing.com" target="_blank" class="btn-library">Bing</a>
+
+    <!-- інші кнопки з хардкод стилів та посиланнями на незвичайні сайти -->
+    <a href="https://www.duckduckgo.com" target="_blank"
+        style="background-color: #FF5733; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; margin-right: 10px;">DuckDuckGo</a>
+
+    <a href="https://www.wikipedia.org" target="_blank"
+        style="background-color: #F6B93B; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; margin-right: 10px;">Wikipedia</a>
+
+    <a href="https://www.imdb.com" target="_blank"
+        style="background-color: #6F1E51; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; margin-right: 10px;">IMDB</a>
+    <!-- Кнопка з рамкою та градієнтом -->
+    <button class="button-gradient">Градієнтна кнопка</button>
+
+    <!-- Кнопка з ефектом 3D -->
+    <button class="button-3d">3D кнопка</button>
+
+    <!-- Кнопка з ефектом складання -->
+    <button class="button-fold">Згорнута кнопка</button>
+
+    <!-- Кнопка з обведенням лінією та переходом по наведенню -->
+    <a href="#" class="btn btn-bordered-hover">Кнопка з обведенням</a>
+
+    <!-- Кнопка з ефектом пульсації -->
+    <button class="btn btn-pulse">Кнопка з ефектом пульсації</button>
+
+    <!-- Кнопка з ефектом градієнту -->
+    <a href="#" class="btn btn-gradient">Кнопка з ефектом градієнту</a>
+    <button class="papiich-button">Крута кнопка</button>
+
+</html>
