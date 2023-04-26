@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: #333;
+        }
+
+        #chicken {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            border-radius: 50%;
+            position: relative;
+            border: 2px solid black;
+        }
+
+        #chicken-eye {
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            border: 1px solid black;
+            top: 30%;
+            left: 59%;
+        }
+
+        .chicken-pupil {
+            width: 8px;
+            height: 8px;
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 80%;
+            transform: translate(-50%, -50%);
+        }
+
+        #chicken-beak {
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 30px solid orange;
+            position: absolute;
+            top: 50%;
+            left: 80%;
+        }
+
+        #chicken-foot-left,
+        #chicken-foot-right {
+            width: 20px;
+            height: 30px;
+            background-color: orange;
+            position: absolute;
+            bottom: -20px;
+        }
+
+        #chicken-foot-left {
+            left: 20%;
+            transform: rotate(30deg);
+            transform-origin: top;
+        }
+
+        #chicken-foot-right {
+            left: 60%;
+            transform: rotate(-30deg);
+            transform-origin: top;
+        }
+
+        /* Анімації для курочки */
+        @keyframes step-left {
+            0% {
+                transform: rotate(30deg)
+            }
+
+            50% {
+                transform: rotate(-30deg)
+            }
+
+            100% {
+                transform: rotate(30deg)
+            }
+        }
+
+        @keyframes step-right {
+            0% {
+                transform: rotate(-30deg)
+            }
+
+            50% {
+                transform: rotate(30deg)
+            }
+
+            100% {
+                transform: rotate(-30deg)
+            }
+        }
+
+        #chicken-foot-left {
+            animation: step-left 0.5s infinite;
+        }
+
+        #chicken-foot-right {
+            animation: step-right 0.5s infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="chicken">
+        <div id="chicken-eye">
+            <div class="chicken-pupil"></div>
+        </div>
+        <div id="chicken-beak"></div>
+        <div id="chicken-foot-left"></div>
+        <div id="chicken-foot-right"></div>
+    </div>
+</body>
+
+</html>
